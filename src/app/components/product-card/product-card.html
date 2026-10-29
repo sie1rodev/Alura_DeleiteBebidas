@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-image-container" [style.background-image]="'url(' + product().image + ')'" [attr.aria-label]="product().title" role="img" >
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{{ product().title }}</h3>
+    <p class="card-price">R$ {{ product().price.toFixed(2).replace('.', ',') }}</p>
+    <button class="btn-add">Adicionar ao Carrinho</button>
+  </div>
+</div>
