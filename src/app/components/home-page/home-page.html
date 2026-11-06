@@ -1,9 +1,17 @@
 <img class="banner" src="assets/imagens/banner.jpg" alt="Banner Deleite" />
+
+@if(showCartAlert()){
+<div class="cart-alert">
+  <p><strong>Você tem {{ cartItens() }} no carrinho </strong></p>
+  <p>Valor tortal estimado {{ totalValueCart() | number:'1.2-2' }}</p>
+  <button class="btn-empty-cart" (click)="clearCart()"> Esvaziar Carrinho</button>
+</div>
+}
 <section class="products-container">
   <h2 class="section-title">Milkshakes</h2>
   <div class="grid">
     @for (milkshake of milkshakes; track milkshake.id) {
-    <app-product-card [product]="milkshake"></app-product-card>
+    <app-product-card [product]="milkshake" (addFunction)="addProduct()"></app-product-card>
     }
   </div>
 </section>
@@ -11,7 +19,7 @@
   <h2 class="section-title">Sorvetes</h2>
   <div class="grid">
     @for (icecream of icecreams; track icecream.id) {
-    <app-product-card [product]="icecream"></app-product-card>
+    <app-product-card [product]="icecream"(addFunction)="addProduct()" ></app-product-card>
     }
   </div>
 </section>
@@ -19,7 +27,7 @@
   <h2 class="section-title">Smoothies</h2>
   <div class="grid">
     @for (smoothie of smoothies; track smoothie.id) {
-    <app-product-card [product]="smoothie"></app-product-card>
+    <app-product-card [product]="smoothie" (addFunction)="addProduct()"></app-product-card>
     }
   </div>
 </section>
@@ -27,7 +35,7 @@
   <h2 class="section-title">Cafés Gelados</h2>
   <div class="grid">
     @for (icecoffee of iceCoffee; track icecoffee.id) {
-    <app-product-card [product]="icecoffee"></app-product-card>
+    <app-product-card [product]="icecoffee" (addFunction)="addProduct()"></app-product-card>
     }
   </div>
 
