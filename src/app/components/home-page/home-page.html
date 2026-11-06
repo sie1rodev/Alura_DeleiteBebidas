@@ -2,9 +2,33 @@
 <section class="products-container">
   <h2 class="section-title">Milkshakes</h2>
   <div class="grid">
-
     @for (milkshake of milkshakes; track milkshake.id) {
-      <app-product-card [product]="milkshake"></app-product-card>
+    <app-product-card [product]="milkshake"></app-product-card>
     }
-</div>
+  </div>
+</section>
+<section class="products-container">
+  <h2 class="section-title">Sorvetes</h2>
+  <div class="grid">
+    @for (icecream of icecreams; track icecream.id) {
+    <app-product-card [product]="icecream"></app-product-card>
+    }
+  </div>
+</section>
+<section class="products-container">
+  <h2 class="section-title">Smoothies</h2>
+  <div class="grid">
+    @for (smoothie of smoothies; track smoothie.id) {
+    <app-product-card [product]="smoothie"></app-product-card>
+    }
+  </div>
+</section>
+<section class="products-container">
+  <h2 class="section-title">Cafés Gelados</h2>
+  <div class="grid">
+    @for (icecoffee of iceCoffee; track icecoffee.id) {
+    <app-product-card [product]="icecoffee"></app-product-card>
+    }
+  </div>
+
 </section>
